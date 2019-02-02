@@ -1,3 +1,5 @@
+![Affinity Banner](https://i.imgur.com/OFs5Nmh.png)
+
 ## What is Affinity?
 
 **Affinity** is a tech-demo and also a personal learning project. I would **deeply** appreciate any constructive criticism as to how I can improve my code and why it's an improvement.
