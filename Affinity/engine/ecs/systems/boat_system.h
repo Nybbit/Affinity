@@ -14,8 +14,6 @@ public:
 private:
 	static constexpr float EFFECTIVE_RANGE = 250.0f;
 
-	bool shouldFire(float dot_product);
-
 	std::pair<glm::vec2, glm::vec2> findContactsFromTangent(glm::vec2 circle_center, float radius,
 		float tangent_slope) const;
 	glm::vec2 getTangentVec(glm::vec2 circle_center, glm::vec2 point) const;

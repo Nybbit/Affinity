@@ -167,7 +167,7 @@ void Engine::initEcs()
 	m_ecs->registerComponent<Script>();
 	m_ecs->registerComponent<Boat>();
 	m_ecs->registerComponent<BoatAi>();
-	m_ecs->registerComponent<CannonBall>();
+	m_ecs->registerComponent<Cannonball>();
 	m_ecs->registerComponent<Particle>();
 
 	// Add systems

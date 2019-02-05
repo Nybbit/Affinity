@@ -89,9 +89,9 @@ struct BoatAi final : Component
 	Entity target; // 12 bytes
 };
 
-struct CannonBall final : Component
+struct Cannonball final : Component
 {
-	CannonBall(glm::vec2 direction = glm::vec2(1, 0), glm::float32_t speed = 0.0f, Entity parent_ship = Entity())
+	Cannonball(glm::vec2 direction = glm::vec2(1, 0), glm::float32_t speed = 0.0f, Entity parent_ship = Entity())
 		: direction(direction), speed(speed), parentShip(parent_ship)
 	{
 	}

@@ -7,8 +7,7 @@ void ScriptSystem::update(Engine& engine, EntityComponentSystem& ecs)
 
 	ecs.entityLoop([&](uint32_t i)
 	{
-		const auto script = static_cast<Script*>(sVec[i].get());
-		if (script)
+		if (const auto script = static_cast<Script*>(sVec[i].get()))
 		{
 			script->script(engine, ecs.getEntityByIdx(i));
 		}

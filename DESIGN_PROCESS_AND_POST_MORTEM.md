@@ -59,11 +59,11 @@ The systems are responsible for all the components working. For instance, the ga
 
 ## Making the ECS Cache-Friendly and Data-Oriented Design
 
-All of my game development projects up to this point have been Object-Oriented because that's how I learned to code. Unfortunately, OOP isn't always the best option for everything.
+All of my game development projects up to this point have been more "traditional" OO (like how they teach in schools) because that's how I learned to code. Unfortunately, this approach isn't always the best. Especially when performance is critical.
 
 A little bit ago I started learning about data-oriented design. It's a different way of looking at a program that focuses on how you layout data in your program and how you work on it. (Here's a fantastic talk about [Data-Oriented Design](https://www.youtube.com/watch?v=rX0ItVEVjHc))
 
-An object-oriented ECS might look something like this...
+A more "traditional" object-oriented ECS might look something like this...
 
 ```cpp
 struct Entity
@@ -148,7 +148,9 @@ This project was the first time I had ever done proper video-game "AI" and it tu
 | ALIGN | Optimally, get perfectly parallel with the target but getting within a certain box and moving with the target is fine too. Shoot whenever the target is within an angle of `pi/4`. |
 | WANDER | Go to the right, active when the AI has no target |
 
-The thing I'm most unhappy with is how the code turned out. I'm sure that I could improve the code given the time and motivation as there are a few weird things that came out of me just trying to get it to work at 1 am (I believe somewhere in there I used a single variable for two different things? :scream:).
+<strike>The thing I'm most unhappy with is how the code turned out. I'm sure that I could improve the code given the time and motivation as there are a few weird things that came out of me just trying to get it to work at 1 am (I believe somewhere in there I used a single variable for two different things? :scream:).</strike>
+
+I improved the code quality a bunch and I'm a lot happier with it now but it's still not quite perfect.
 
 Functionally, the AI works pretty well. None of the boats coordinate with one another, this leads to a lot of friendly fire as well as some accidental strategic positioning.
 
@@ -180,7 +182,7 @@ ecs.entityLoop([&](uint32_t i)
 but it would be really cool if instead it worked like this...
 
 ```cpp
-ecs.entityLoop([&](uint32_t i, Transform& t, Boat& b)
+ecs.entityLoop<Transform, Boat>([&](uint32_t i, Transform& t, Boat& b)
 {
     // if transform component and boat component
 });
