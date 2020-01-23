@@ -1,3 +1,5 @@
+> **Note:** This code no longer meets my standards of quality, rather than delete it I'll keep it around as a "code time capsule". Enjoy! :smile:
+
 ![Affinity Banner](https://i.imgur.com/OFs5Nmh.png)
 
 ## What is Affinity?
